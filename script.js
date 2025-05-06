@@ -56,7 +56,7 @@ function renderMovieDetails(movieId) {
          return masterMovieBox.innerHTML = movieTray  
         }      
     )
-  
+    document.getElementById('page-navBtn').style.display = 'flex'
 }
 
 //handles the movie selection and stores it to local storagg(and it makes sure movies are not added twice)
