@@ -3,9 +3,14 @@ const previousBtn = document.getElementById('prev')
 const nextBtn = document.getElementById('next')
 
 //checks if there is local storage with the page reloads
-const checklocalStorage = !localStorage ? 
-                            localStorage.setItem('movieSaved', JSON.stringify([])) : 
-                            JSON.parse(localStorage.getItem('movieSaved'))
+
+const key = "movieSaved"
+
+if (!localStorage.getItem(key)) {
+    localStorage.setItem(key, JSON.stringify([]))
+}          
+
+const checklocalStorage = JSON.parse(localStorage.getItem('movieSaved'))
 
 
 //fetch data from the omdb api 
